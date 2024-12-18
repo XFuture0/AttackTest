@@ -12,6 +12,7 @@ public class PlayerAnim : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rb;
     private float CurrentSpeed;
+    [HideInInspector]public bool CanMove;
     private void Awake()
     {
         inputAction = new PlayerController();
@@ -23,6 +24,7 @@ public class PlayerAnim : MonoBehaviour
     }
     private void Update()
     {
+        OnCancelBlock();
         if (Move.isJumping)
         {
             anim.SetBool("IsJumping", true);
@@ -52,6 +54,10 @@ public class PlayerAnim : MonoBehaviour
     {
         anim.SetTrigger("Roll");
     }
+    public void DashTime()
+    {
+        anim.SetTrigger("Dashing");
+    }
     private void PlayerSpeedAnim()
     {
         CurrentSpeed = math.abs(rb.velocity.x);
@@ -64,6 +70,30 @@ public class PlayerAnim : MonoBehaviour
             anim.SetBool("Run", false);
         }
         anim.SetFloat("Speed", CurrentSpeed);
+    }
+    public void OnRockHit()
+    {
+        anim.SetTrigger("RockHit");
+    }
+    public void OnBlock()
+    {
+        CanMove = false;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        anim.SetTrigger("Block");
+    }
+    public void OnWinBlock()
+    {
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        anim.SetTrigger("WinBlock");
+    }
+    private void OnCancelBlock()
+    {
+        if (CanMove && math.abs(rb.velocity.x) > 0)
+        {
+            CanMove = false;
+            Move.IsBlocking = false;
+            anim.Play("New State",3);
+        }
     }
     public void PlayerisDead()
     {

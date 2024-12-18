@@ -1,4 +1,4 @@
 public enum StateType
 {
-    Hide,Walk,Ice
+    Hide,Walk,Ice,Surf,BallAttack,Defend
 }

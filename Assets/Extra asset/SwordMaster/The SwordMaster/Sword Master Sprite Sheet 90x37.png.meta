@@ -1441,15 +1441,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword Master Sprite Sheet 90x37_64
+      name: hit1.1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 629
         width: 90
         height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.31157085, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1462,15 +1462,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword Master Sprite Sheet 90x37_65
+      name: hit1.2
       rect:
         serializedVersion: 2
-        x: 90
+        x: 91
         y: 629
         width: 90
         height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.3115709, y: 0.49460745}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1483,15 +1483,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword Master Sprite Sheet 90x37_66
+      name: hit1.3
       rect:
         serializedVersion: 2
-        x: 180
+        x: 179
         y: 629
         width: 90
         height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.3115709, y: 0.50651264}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1504,15 +1504,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword Master Sprite Sheet 90x37_67
+      name: hit1.4
       rect:
         serializedVersion: 2
         x: 270
         y: 629
         width: 90
         height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.3115709, y: 0.5195345}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1525,15 +1525,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword Master Sprite Sheet 90x37_68
+      name: hit1.5
       rect:
         serializedVersion: 2
         x: 360
         y: 629
         width: 90
         height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.3115709, y: 0.51302356}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1672,12 +1672,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword Master Sprite Sheet 90x37_75
+      name: block1.1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 555
-        width: 90
+        width: 55
         height: 37
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1693,12 +1693,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword Master Sprite Sheet 90x37_76
+      name: block1.2
       rect:
         serializedVersion: 2
-        x: 90
-        y: 555
-        width: 90
+        x: 89
+        y: 554
+        width: 55
         height: 37
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1714,12 +1714,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword Master Sprite Sheet 90x37_77
+      name: block1.3
       rect:
         serializedVersion: 2
         x: 180
         y: 555
-        width: 90
+        width: 55
         height: 37
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1735,12 +1735,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword Master Sprite Sheet 90x37_78
+      name: block1.4
       rect:
         serializedVersion: 2
         x: 270
-        y: 555
-        width: 90
+        y: 554
+        width: 55
         height: 37
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1756,12 +1756,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword Master Sprite Sheet 90x37_79
+      name: block1.5
       rect:
         serializedVersion: 2
         x: 360
         y: 555
-        width: 90
+        width: 55
         height: 37
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1777,12 +1777,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword Master Sprite Sheet 90x37_80
+      name: block1.6
       rect:
         serializedVersion: 2
-        x: 450
+        x: 451
         y: 555
-        width: 90
+        width: 55
         height: 37
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -3238,11 +3238,6 @@ TextureImporter:
       Sword Master Sprite Sheet 90x37_50: 1780435566
       Sword Master Sprite Sheet 90x37_51: 437799344
       Sword Master Sprite Sheet 90x37_6: -1520968090
-      Sword Master Sprite Sheet 90x37_64: 597002144
-      Sword Master Sprite Sheet 90x37_65: 1386308121
-      Sword Master Sprite Sheet 90x37_66: 1909914924
-      Sword Master Sprite Sheet 90x37_67: -1565563082
-      Sword Master Sprite Sheet 90x37_68: 851851193
       Sword Master Sprite Sheet 90x37_69: 1882991723
       Sword Master Sprite Sheet 90x37_7: 1302197353
       Sword Master Sprite Sheet 90x37_70: -571933657
@@ -3250,13 +3245,7 @@ TextureImporter:
       Sword Master Sprite Sheet 90x37_72: -820423476
       Sword Master Sprite Sheet 90x37_73: 740580262
       Sword Master Sprite Sheet 90x37_74: 324415664
-      Sword Master Sprite Sheet 90x37_75: -2105603348
-      Sword Master Sprite Sheet 90x37_76: -207423684
-      Sword Master Sprite Sheet 90x37_77: -1163627468
-      Sword Master Sprite Sheet 90x37_78: 1232051281
-      Sword Master Sprite Sheet 90x37_79: 1309061092
       Sword Master Sprite Sheet 90x37_8: 1450059507
-      Sword Master Sprite Sheet 90x37_80: 1659247334
       Sword Master Sprite Sheet 90x37_9: 230619983
       Sword Master Sprite Sheet 90x37_97: -1202090559
       Sword Master Sprite Sheet 90x37_98: 1658440539
@@ -3273,12 +3262,23 @@ TextureImporter:
       attack2.3: 1329229161
       attack2.4: 656655123
       attack2.5: -826384660
+      block1.1: -2105603348
+      block1.2: -207423684
+      block1.3: -1163627468
+      block1.4: 1232051281
+      block1.5: 1309061092
+      block1.6: 1659247334
       dash1.1: 1051926750
       dash1.2: -905462594
       dash1.3: 1828686679
       dash1.4: -1452229415
       dash1.5: 1103103074
       dash1.6: 311900578
+      hit1.1: 597002144
+      hit1.2: 1386308121
+      hit1.3: 1909914924
+      hit1.4: -1565563082
+      hit1.5: 851851193
       jump1: -168757948
       jump1.1: 7601423
       jump1.2: -432058288

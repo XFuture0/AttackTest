@@ -6,6 +6,8 @@ public class IceState : State
 {
     public override void OnEnter(MainBoss Boss)
     {
+        Boss.GetPlayerPo();
+        Boss.BossTurnFace();
         Boss.OnHideAnim();
         Boss.SetIce();
     }

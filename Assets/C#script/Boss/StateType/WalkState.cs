@@ -8,12 +8,12 @@ public class WalkState : State
     public override void OnEnter(MainBoss Boss)
     {
         Boss.OnWalkAnim();
-        Boss.Skill_1();
+        Boss.GetPlayerPo();
         Boss.BossTurnFace();
     }
     public override void LogicUpdate(MainBoss Boss)
     {
-        Boss.Skill_1();
+        Boss.GetPlayerPo();
         if(math.abs(Boss.transform.position.x - Boss.Player.position.x) < 2)
         {
             if (!Boss.isAttack1z1)

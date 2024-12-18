@@ -10,6 +10,8 @@ public class Bossanim : MonoBehaviour
     [HideInInspector] public bool IsHide;
     [HideInInspector] public bool IsDead;
     [HideInInspector] public bool IsWalk;
+    [HideInInspector] public bool IsHeal;
+    [HideInInspector] public bool IsSurf;
     private void Awake()
     {
         IsHide = false;
@@ -25,6 +27,11 @@ public class Bossanim : MonoBehaviour
                 IsDead = true;
                 anim.SetBool("IsDead", true);
             }
+        }
+        if(health.Currenthealth <= (health.Fullhealth / 2) && !IsHeal)
+        {
+            IsHeal = true;
+            anim.SetTrigger("Heal");
         }
     }
     public void OnHideAnim()
@@ -44,5 +51,27 @@ public class Bossanim : MonoBehaviour
     public void OnAttack1z2()
     {
         anim.SetTrigger("Attack1-2");
+    }
+    public void OnAttack2()
+    {
+        anim.SetTrigger("Attack2");
+    }
+    public void OnBallAttack()
+    {
+        anim.SetTrigger("BallAttack");
+    }
+    public void OnDefend()
+    {
+        anim.SetTrigger("Defend");
+    }
+    public void OnBossBeHurt()
+    {
+        anim.Play("New State", 0);
+        anim.SetTrigger("BeHurt");
+    }
+    public void OnSurfAnim()
+    {
+        IsSurf = !IsSurf;
+        anim.SetBool("Surf", IsSurf);
     }
 }

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PlayerCanvs : MonoBehaviour
 {
     public Image HealthGreen;
+    public GameObject BlockBox;
     [Header("ÊÂ¼þ¼àÌý")]
     public FloatEventSO AttackPlayerEvent;
     private void OnEnable()
@@ -16,14 +17,17 @@ public class PlayerCanvs : MonoBehaviour
 
     private void OnAttackPlayer(float BossAttackCount)
     {
-        if (HealthGreen.transform.localScale.x != 0)
+        if (BlockBox.activeSelf == false)
         {
-            var AttackHurt = BossAttackCount / 100f;
-            HealthGreen.transform.localScale -= new Vector3(AttackHurt, 0, 0);
-        }
-        if(HealthGreen.transform.localScale.x <= 0)
-        {
-            HealthGreen.transform.localScale = new Vector3(0, 1, 1);
+            if (HealthGreen.transform.localScale.x != 0)
+            {
+                var AttackHurt = BossAttackCount / 100f;
+                HealthGreen.transform.localScale -= new Vector3(AttackHurt, 0, 0);
+            }
+            if (HealthGreen.transform.localScale.x <= 0)
+            {
+                HealthGreen.transform.localScale = new Vector3(0, 1, 1);
+            }
         }
     }
 
