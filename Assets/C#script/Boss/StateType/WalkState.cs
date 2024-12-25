@@ -7,9 +7,9 @@ public class WalkState : State
 {
     public override void OnEnter(MainBoss Boss)
     {
-        Boss.OnWalkAnim();
         Boss.GetPlayerPo();
         Boss.BossTurnFace();
+        Boss.OnWalkAnim();
     }
     public override void LogicUpdate(MainBoss Boss)
     {
@@ -20,7 +20,6 @@ public class WalkState : State
             {
                 Boss.isAttack1z1 = true;
                 Boss.rb.velocity = Vector2.zero;
-                Boss.OnWalkAnim();
                 Boss.OnAttack1z1Anim();
             }
         }

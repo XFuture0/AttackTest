@@ -7,6 +7,7 @@ public class PlayerHit : MonoBehaviour
 {
     [Header("¹¥»÷µÆ¹â")]
     public float LightTime;
+    public float MaxLight;
     [HideInInspector]public float LightTime_Count;
     public Light2D AttackLight;
     private bool IsHit;
@@ -36,9 +37,10 @@ public class PlayerHit : MonoBehaviour
         if (other.tag == "Boss")
         {
             IsHit = true;
-            AttackBossEvent.RaiseFloatEvent(AttackCount);
+            var Count = (int)Random.Range(AttackCount,AttackCount * 1.2f);
+            AttackBossEvent.RaiseFloatEvent(Count);
             PlayerSpeedEvent.RaiseEvent();
-            AttackLight.intensity = 1.5f;
+            AttackLight.intensity = MaxLight;
             LightTime_Count = LightTime;
         }
     }

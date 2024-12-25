@@ -12,6 +12,7 @@ public class PlayerAnim : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rb;
     private float CurrentSpeed;
+    private bool isCatch;
     [HideInInspector]public bool CanMove;
     private void Awake()
     {
@@ -39,6 +40,11 @@ public class PlayerAnim : MonoBehaviour
         {
             anim.Play("New State",1);
         }
+    }
+    public void OnCatch()
+    {
+        isCatch = !isCatch;
+        anim.SetBool("Catch", isCatch);
     }
     public void AttackCombo()
     {

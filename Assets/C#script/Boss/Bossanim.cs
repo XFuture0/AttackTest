@@ -6,6 +6,7 @@ public class Bossanim : MonoBehaviour
 {
     private BossHealth health;
     private Animator anim;
+    private MainBoss mainboss;
     [Header("¶¯»­×´Ì¬")]
     [HideInInspector] public bool IsHide;
     [HideInInspector] public bool IsDead;
@@ -17,6 +18,7 @@ public class Bossanim : MonoBehaviour
         IsHide = false;
         anim = GetComponent<Animator>();
         health = GetComponent<BossHealth>();
+        mainboss = GetComponent<MainBoss>();
     }
     private void Update()
     {
@@ -32,7 +34,12 @@ public class Bossanim : MonoBehaviour
         {
             IsHeal = true;
             anim.SetTrigger("Heal");
+            Invoke("OnState2", 1.5f);
         }
+    }
+    public void OnState2()
+    {
+        mainboss.State2();
     }
     public void OnHideAnim()
     {
@@ -66,12 +73,15 @@ public class Bossanim : MonoBehaviour
     }
     public void OnBossBeHurt()
     {
-        anim.Play("New State", 0);
         anim.SetTrigger("BeHurt");
     }
     public void OnSurfAnim()
     {
         IsSurf = !IsSurf;
         anim.SetBool("Surf", IsSurf);
+    }
+    public void OnHeal()
+    {
+        anim.SetTrigger("Heal");
     }
 }

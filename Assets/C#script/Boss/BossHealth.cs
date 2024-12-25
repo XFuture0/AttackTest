@@ -46,7 +46,10 @@ public class BossHealth : MonoBehaviour
             Instantiate(BeAttackEffect, HitPosition, Quaternion.Euler(0, 180, 0),BeAttackEffect_Box.transform);
         }
         IsBeHurt = true;
-        BeHurtCount++;
+        if (Boss.CurrentState == Boss.hideState)
+        {
+            BeHurtCount++;
+        }
         Currenthealth -= AttackCount;
     }
 
