@@ -65,6 +65,7 @@ public class MainBoss : MonoBehaviour
     public TransFormEventSO ReturnPlayerPoEvent;
     public FloatEventSO AttackBossEvent;
     public VoidEventSO HitPlayerEvent;
+    public VoidEventSO BlockBossEvent;
     [Header("冰剑")]
     public GameObject IcePool;
     private void Awake()
@@ -116,6 +117,12 @@ public class MainBoss : MonoBehaviour
         };
         CurrentState.OnExit(this);
         Temp = newstate;
+        if(Temp == hideState)
+        {
+            anim.IsSurf = false;
+            anim.IsWalk = false;
+            anim.Restart();
+        }
         StartCoroutine(EnterTip());
     }
     private IEnumerator EnterTip()
@@ -268,8 +275,9 @@ public class MainBoss : MonoBehaviour
         }
         if (SkillTime_Count <= 0 && !IsSkill)
         {
-            SkillTime_Count = SkillTime;
             IsSkill = true;
+            SkillTime_Count = SkillTime;
+ 
             ChooseState();
         }
     }
@@ -279,6 +287,7 @@ public class MainBoss : MonoBehaviour
         HitPlayerEvent.OnRaiseEvent += OnHitPlayer;
         AttackBossEvent.OnRaiseFloatEvent += OnAttackBoss;
         GetBossPoEvent.OnRaiseEvent += OnGetBossPo;
+        BlockBossEvent.OnRaiseEvent += OnBlockBoss;
     }
 
     private void OnGetBossPo()
@@ -350,23 +359,6 @@ public class MainBoss : MonoBehaviour
             StartCoroutine(WaitDefend());
             health.BeHurtCount = 0;
             health.IsBeHurt = false;
-            var m = UnityEngine.Random.Range(1, 3);
-            switch (m)
-            {
-                case 1:
-                    SkillTime_Count = SkillTime;
-                    GetPlayerPo();
-                    BossTurnFace();
-                    OnDefendAnim();
-                    IsSkill = false;
-                    break;
-                case 2:
-                    SkillTime_Count = SkillTime;
-                    OnHealAnim();
-                    OnWaterBallFalling();
-                    IsSkill = false;
-                    break;
-            }
             BeHurtTime_Count = BeHurtTime;
         }
         else if(BeHurtTime_Count < 0 && health.BeHurtCount < 8 && health.IsBeHurt)
@@ -381,6 +373,23 @@ public class MainBoss : MonoBehaviour
         BossTip.SetActive(true);
         yield return new WaitForSeconds(1f);
         BossTip.SetActive(false);
+        var m = UnityEngine.Random.Range(1, 3);
+        switch (m)
+        {
+            case 1:
+                SkillTime_Count = SkillTime;
+                GetPlayerPo();
+                BossTurnFace();
+                OnDefendAnim();
+                IsSkill = false;
+                break;
+            case 2:
+                SkillTime_Count = SkillTime;
+                OnHealAnim();
+                OnWaterBallFalling();
+                IsSkill = false;
+                break;
+        }
     }
     private IEnumerator SetIceTimeFix()
     {
@@ -410,7 +419,7 @@ public class MainBoss : MonoBehaviour
         if(Player.localScale.x == -1)
         {
             var SethurtPo = new Vector3(transform.position.x - 0.5f,transform.position.y - 1.7f,transform.position.z);
-            if(hurtCount < 15)
+            if(hurtCount < 999)
             {
                 Instantiate(HurtCount_White, SethurtPo, Quaternion.identity, HurtCountBox.transform);
                 GetBossHurtCountEvent.RaiseFloatEvent(hurtCount);
@@ -424,7 +433,7 @@ public class MainBoss : MonoBehaviour
         if(Player.localScale.x == 1)
         {
             var SethurtPo = new Vector3(transform.position.x + 0.9f, transform.position.y - 1.7f, transform.position.z);
-            if (hurtCount < 15)
+            if (hurtCount < 999)
             {
                 Instantiate(HurtCount_White, SethurtPo, Quaternion.identity, HurtCountBox.transform);
                 GetBossHurtCountEvent.RaiseFloatEvent(hurtCount);
@@ -472,13 +481,19 @@ public class MainBoss : MonoBehaviour
             }
         }
     }
+    private void OnBlockBoss()
+    {
+        isHitPlayer = false;
+    }
     private void OnDisable()
     {
         ReturnPlayerPoEvent.OnRaiseTransFormEvent -= OnReturnPlayerPo;
         HitPlayerEvent.OnRaiseEvent -= OnHitPlayer;
         AttackBossEvent.OnRaiseFloatEvent -= OnAttackBoss;
         GetBossPoEvent.OnRaiseEvent -= OnGetBossPo;
+        BlockBossEvent.OnRaiseEvent -= OnBlockBoss;
     }
+
     public void State2()
     {
         MainMap.SetActive(false);

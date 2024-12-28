@@ -12,7 +12,7 @@ public class PlayerMove : MonoBehaviour
     private PlayerController inputAction;
     private PlayerAnim playerAnim;
     private Animator anim;
-    [HideInInspector]public Vector2 playermove;
+    [HideInInspector] public Vector2 playermove;
     private Rigidbody2D rb;
     private float MainGravity;
     private Transform Boss;
@@ -22,11 +22,11 @@ public class PlayerMove : MonoBehaviour
     public float PlayerSpeed;
     public float SpeedMax;
     private float PlayerStart;
-    [HideInInspector]public int Combo;
+    [HideInInspector] public int Combo;
     private bool IsHoldAttack;
     private bool CanHoldAttack;
     private bool IsCatch;
-    [HideInInspector]public bool IsBlocking;
+    [HideInInspector] public bool IsBlocking;
     [Header("冲刺特效")]
     public ParticleSystem StopDashEffect;
     public GameObject DashEffect;
@@ -41,7 +41,7 @@ public class PlayerMove : MonoBehaviour
     [Header("人物跳跃")]
     private int Jump_Count;
     public float JumpHigh;
-    [HideInInspector]public bool isJumping;
+    [HideInInspector] public bool isJumping;
     [Header("人物翻滚")]
     private bool isRoll;
     public float RollSpeed;
@@ -71,15 +71,16 @@ public class PlayerMove : MonoBehaviour
     public VoidEventSO GetBossPoEvent;
     public TransFormEventSO ReturnPlayerPoEvent;
     public FloatEventSO GetPlayerHurtCountEvent;
+    public VoidEventSO BlockBossEvent;
     [Header("事件监听")]
     public TransFormEventSO ReturnBossPoEvent;
     public TransFormEventSO GetPlayerEvent;
     public VoidEventSO PlayerSpeedEvent;
     public VoidEventSO GetPlayerPoEvent;
-    public VoidEventSO BlockBossEvent;
     public FloatEventSO AttackBossEvent;
     public FloatEventSO AttackPlayerEvent;
     public VoidEventSO PatPlayerEvent;
+    public TransFormEventSO DefendHitEvent;
     private void Awake()
     {
         Jump_Count = 2;
@@ -93,7 +94,7 @@ public class PlayerMove : MonoBehaviour
         playercheck = GetComponent<PlayerCheck>();
         playerAnim = GetComponent<PlayerAnim>();
         anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>(); 
+        rb = GetComponent<Rigidbody2D>();
     }
     private void OnEnable()
     {
@@ -110,6 +111,7 @@ public class PlayerMove : MonoBehaviour
         ReturnBossPoEvent.OnRaiseTransFormEvent += OnReturnBossPo;
         GetPlayerEvent.OnRaiseTransFormEvent += OnGetPlayer;
         PatPlayerEvent.OnRaiseEvent += OnPatPlayer;
+        DefendHitEvent.OnRaiseTransFormEvent += OnDefendHit;
         MainGravity = rb.gravityScale;
         inputAction.Enable();
     }
@@ -127,7 +129,7 @@ public class PlayerMove : MonoBehaviour
                 StartCoroutine(HoldAttackIng());
             }
         }
-        if(PatTime_Count >= 0)
+        if (PatTime_Count >= 0)
         {
             PatTime_Count -= Time.deltaTime;
         }
@@ -147,7 +149,7 @@ public class PlayerMove : MonoBehaviour
     }
     private void Move()
     {
-        if(PlayerSpeed > SpeedMax)
+        if (PlayerSpeed > SpeedMax)
         {
             PlayerSpeed = SpeedMax;
         }
@@ -168,13 +170,13 @@ public class PlayerMove : MonoBehaviour
             }
             if (playermove.x < 0)
             {
-                transform.localScale = new Vector3(-1, 1, 1 );
+                transform.localScale = new Vector3(-1, 1, 1);
             }
         }
     }
     private void OnJump(InputAction.CallbackContext context)
     {
-        if(Jump_Count > 0)
+        if (Jump_Count > 0)
         {
             isJumping = true;
             Jump_Count--;
@@ -237,7 +239,7 @@ public class PlayerMove : MonoBehaviour
         {
             DashEffecttime_Count -= Time.deltaTime;
         }
-        if(DashEffecttime_Count < 0)
+        if (DashEffecttime_Count < 0)
         {
             if (!IsStopDashEffect)
             {
@@ -245,7 +247,7 @@ public class PlayerMove : MonoBehaviour
                 StopDashEffect.Stop();
             }
         }
-        if(DashEffecttime_Count < -1.5f)
+        if (DashEffecttime_Count < -1.5f)
         {
             isDash_Effect = false;
             DashEffect.SetActive(false);
@@ -257,7 +259,7 @@ public class PlayerMove : MonoBehaviour
         {
             rb.gravityScale = 0;
             Dashtime_Count -= Time.deltaTime;
-            rb.velocity = new Vector2(DashSpeed * transform.localScale.x * Time.deltaTime,0);
+            rb.velocity = new Vector2(DashSpeed * transform.localScale.x * Time.deltaTime, 0);
         }
         if (isDash && Dashtime_Count <= 0)
         {
@@ -268,7 +270,7 @@ public class PlayerMove : MonoBehaviour
     }
     private void OnDash(InputAction.CallbackContext context)
     {
-        if(PlayerSpeed > 550)
+        if (PlayerSpeed > 550)
         {
             if (!isDash && !isRoll)
             {
@@ -280,7 +282,7 @@ public class PlayerMove : MonoBehaviour
                 {
                     DashEffect.transform.localRotation = quaternion.Euler(-90, 180, 0);
                 }
-                if(transform.localScale.x == -1)
+                if (transform.localScale.x == -1)
                 {
                     DashEffect.transform.localRotation = quaternion.Euler(-90, 0, 0);
                 }
@@ -302,7 +304,7 @@ public class PlayerMove : MonoBehaviour
     }
     public void SetBlockEffect()
     {
-        if(transform.localScale.x == 1)
+        if (transform.localScale.x == 1)
         {
             var BlockEffectPo = new Vector3(transform.position.x + 0.62f, transform.position.y - 0.1f, transform.position.z);
             var BlockTipPo = new Vector3(transform.position.x + 0.8f, transform.position.y + 1.2f, transform.position.z);
@@ -317,7 +319,7 @@ public class PlayerMove : MonoBehaviour
             var BlockEffectPo = new Vector3(transform.position.x - 0.62f, transform.position.y + 0.1f, transform.position.z);
             var BlockTipPo = new Vector3(transform.position.x - 0.8f, transform.position.y + 1.2f, transform.position.z);
             Instantiate(BlockEffect, BlockEffectPo, Quaternion.Euler(0, 180, 0));
-            Instantiate(BlockTip, BlockTipPo,Quaternion.identity);
+            Instantiate(BlockTip, BlockTipPo, Quaternion.identity);
             StopTime_Count = StopTime;
             IsStopTime = true;
             BlockBossEvent.RaiseEvent();
@@ -349,12 +351,12 @@ public class PlayerMove : MonoBehaviour
     }
     private void AttackBossStop()
     {
-        if(StopTime_Count > 0 && IsStopTime)
+        if (StopTime_Count > 0 && IsStopTime)
         {
             StopTime_Count -= Time.deltaTime;
             anim.speed = math.lerp(0, 1, (1 - StopTime_Count / StopTime));
         }
-        if(StopTime_Count < 0 && IsStopTime)
+        if (StopTime_Count < 0 && IsStopTime)
         {
             IsStopTime = false;
         }
@@ -376,11 +378,11 @@ public class PlayerMove : MonoBehaviour
     }
     private void OnSpeedUp()
     {
-        if(PlayerSpeed > 550)
+        if (PlayerSpeed > 550)
         {
             SpeedUp.SetActive(true);
         }
-        if(PlayerSpeed <= 550)
+        if (PlayerSpeed <= 550)
         {
             SpeedUp.SetActive(false);
         }
@@ -420,17 +422,18 @@ public class PlayerMove : MonoBehaviour
             IsCatch = true;
             playerAnim.OnCatch();
         }
-        if(boss.localScale.x == -1)
+        if (boss.localScale.x == -1)
         {
             var CatchPo = new Vector3(boss.position.x + 1, boss.position.y - 1, boss.position.z);
             transform.position = CatchPo;
         }
-        if(boss.localScale.x == 1)
+        if (boss.localScale.x == 1)
         {
             var CatchPo = new Vector3(boss.position.x - 0.5f, boss.position.y - 1, boss.position.z);
             transform.position = CatchPo;
         }
         BossFace = boss.localScale.x;
+        inputAction.Player.Disable();
     }
     private void OnPatPlayer()
     {
@@ -438,13 +441,26 @@ public class PlayerMove : MonoBehaviour
         rb.gravityScale = MainGravity;
         IsCatch = false;
         playerAnim.OnCatch();
-        if(BossFace == -1)
+        if (BossFace == -1)
         {
             rb.velocity = new Vector2(-50, 10);
         }
-        if(BossFace == 1)
+        if (BossFace == 1)
         {
             rb.velocity = new Vector2(50, 10);
+        }
+        inputAction.Player.Enable();
+    }
+    private void OnDefendHit(Transform boss)
+    {
+        PatTime_Count = PatTime;
+        if (boss.localScale.x == 1)
+        {
+            rb.velocity = new Vector2(50, 10);
+        }
+        if (boss.localScale.x == -1)
+        {
+            rb.velocity = new Vector2(-50, 10);
         }
     }
     private void OnDisable()
@@ -456,5 +472,6 @@ public class PlayerMove : MonoBehaviour
         ReturnBossPoEvent.OnRaiseTransFormEvent -= OnReturnBossPo;
         GetPlayerEvent.OnRaiseTransFormEvent -= OnGetPlayer;
         PatPlayerEvent.OnRaiseEvent -= OnPatPlayer;
+        DefendHitEvent.OnRaiseTransFormEvent -= OnDefendHit;
     }
 }

@@ -1188,6 +1188,106 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &575145868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 575145869}
+  - component: {fileID: 575145871}
+  - component: {fileID: 575145870}
+  m_Layer: 0
+  m_Name: BossAttack3-2Hit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &575145869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575145868}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1995193281}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &575145870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575145868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0659f3adb834e454184d409e7e217015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LightTime: 0.02
+  MaxLight: 2
+  LightTime_Count: 0
+  AttackLight: {fileID: 619394801}
+  AttackPlayerEvent: {fileID: 11400000, guid: b258a16067ca802439f1f6411795685b, type: 2}
+  BossAttackCount: 300
+--- !u!60 &575145871
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575145868}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 6.051918, y: -3.07856}
+      - {x: 0.9479742, y: -3.0851579}
+      - {x: 0.9216888, y: -3.980371}
+      - {x: 6.073903, y: -3.95178}
+  m_UseDelaunayMesh: 0
 --- !u!1 &608218071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,6 +1424,106 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &672347252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 672347253}
+  - component: {fileID: 672347255}
+  - component: {fileID: 672347254}
+  m_Layer: 0
+  m_Name: BossAttack3-1Hit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &672347253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672347252}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1995193281}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &672347254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672347252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0659f3adb834e454184d409e7e217015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LightTime: 0.02
+  MaxLight: 2
+  LightTime_Count: 0
+  AttackLight: {fileID: 619394801}
+  AttackPlayerEvent: {fileID: 11400000, guid: b258a16067ca802439f1f6411795685b, type: 2}
+  BossAttackCount: 300
+--- !u!60 &672347255
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672347252}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 5.4701014, y: -0.71984464}
+      - {x: 1.7735245, y: -0.74216735}
+      - {x: 1.8651745, y: -3.9410589}
+      - {x: 5.515674, y: -3.998954}
+  m_UseDelaunayMesh: 0
 --- !u!1 &700993605
 GameObject:
   m_ObjectHideFlags: 0
@@ -10168,7 +10368,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: / 1000
+  m_text: / 2000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15204,7 +15404,7 @@ MonoBehaviour:
   HealthGreen: {fileID: 1509781855}
   BlockBox: {fileID: 862242723}
   Health: {fileID: 1877660933}
-  PlayerHealth: 1000
+  PlayerHealth: 2000
   AttackPlayerEvent: {fileID: 11400000, guid: b258a16067ca802439f1f6411795685b, type: 2}
   GetPlayerHurtCountEvent: {fileID: 11400000, guid: bae8f8f8e080ba046a215a91ea95a779, type: 2}
 --- !u!1 &969745276
@@ -15563,14 +15763,15 @@ MonoBehaviour:
   GetBossPoEvent: {fileID: 11400000, guid: cfa094f9eb605654dacaea8dd0b9a578, type: 2}
   ReturnPlayerPoEvent: {fileID: 11400000, guid: 11f6c06be7650ad468aa1bef51353c30, type: 2}
   GetPlayerHurtCountEvent: {fileID: 11400000, guid: bae8f8f8e080ba046a215a91ea95a779, type: 2}
+  BlockBossEvent: {fileID: 11400000, guid: 32349da592c1d934b89a42ea9398c6bc, type: 2}
   ReturnBossPoEvent: {fileID: 11400000, guid: bf7676aef2ccfed46babba9e2c6c900b, type: 2}
   GetPlayerEvent: {fileID: 11400000, guid: 1713e193f6db31547a581f25b98dcd41, type: 2}
   PlayerSpeedEvent: {fileID: 11400000, guid: 0d69982ab26461e4983e1b537761da44, type: 2}
   GetPlayerPoEvent: {fileID: 11400000, guid: 19d3f1d8633c36245824f71e8062bd0a, type: 2}
-  BlockBossEvent: {fileID: 11400000, guid: 32349da592c1d934b89a42ea9398c6bc, type: 2}
   AttackBossEvent: {fileID: 11400000, guid: 0f8ce584c5ad5944cb2354bcba8c485f, type: 2}
   AttackPlayerEvent: {fileID: 11400000, guid: b258a16067ca802439f1f6411795685b, type: 2}
   PatPlayerEvent: {fileID: 11400000, guid: e3da9beca52ee9142bfa2a314e6bce86, type: 2}
+  DefendHitEvent: {fileID: 11400000, guid: 514abda201e6cf94e9bbe6bbc7d7bb31, type: 2}
 --- !u!95 &1026509526
 Animator:
   serializedVersion: 5
@@ -15652,7 +15853,7 @@ MonoBehaviour:
   BlockBox: {fileID: 862242723}
   LightTime: 0.05
   BlockLight: {fileID: 619394801}
-  Fullhealth: 1000
+  Fullhealth: 2000
   Currenthealth: 0
   AttackPlayerEvent: {fileID: 11400000, guid: b258a16067ca802439f1f6411795685b, type: 2}
 --- !u!1 &1054868401
@@ -15863,6 +16064,106 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090724483}
   m_CullTransparentMesh: 1
+--- !u!1 &1101508702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1101508703}
+  - component: {fileID: 1101508705}
+  - component: {fileID: 1101508704}
+  m_Layer: 0
+  m_Name: BossAttack2-1Hit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1101508703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101508702}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1995193281}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1101508704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101508702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0659f3adb834e454184d409e7e217015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LightTime: 0.02
+  MaxLight: 2
+  LightTime_Count: 0
+  AttackLight: {fileID: 619394801}
+  AttackPlayerEvent: {fileID: 11400000, guid: b258a16067ca802439f1f6411795685b, type: 2}
+  BossAttackCount: 300
+--- !u!60 &1101508705
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101508702}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 5.234229, y: -2.1979728}
+      - {x: 1.1209459, y: -2.2124333}
+      - {x: 1.1496968, y: -3.9096093}
+      - {x: 4.328454, y: -3.8495684}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1119730449
 GameObject:
   m_ObjectHideFlags: 0
@@ -20701,6 +21002,106 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab6c7a347611804cbd240ade3c11ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1412453229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1412453230}
+  - component: {fileID: 1412453232}
+  - component: {fileID: 1412453231}
+  m_Layer: 0
+  m_Name: BossAttack2-2Hit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1412453230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412453229}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1995193281}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1412453231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412453229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0659f3adb834e454184d409e7e217015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LightTime: 0.02
+  MaxLight: 2
+  LightTime_Count: 0
+  AttackLight: {fileID: 619394801}
+  AttackPlayerEvent: {fileID: 11400000, guid: b258a16067ca802439f1f6411795685b, type: 2}
+  BossAttackCount: 350
+--- !u!60 &1412453232
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412453229}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 6.0283303, y: -2.080037}
+      - {x: 2.3396165, y: -2.2753325}
+      - {x: 2.376229, y: -3.9017475}
+      - {x: 5.6100225, y: -3.959642}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1422561037
 GameObject:
   m_ObjectHideFlags: 0
@@ -23764,6 +24165,109 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1650098726}
   m_CullTransparentMesh: 1
+--- !u!1 &1661735310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1661735311}
+  - component: {fileID: 1661735312}
+  - component: {fileID: 1661735313}
+  m_Layer: 0
+  m_Name: BossDefendHit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1661735311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661735310}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1995193281}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1661735312
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661735310}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 2.457571, y: -2.4648757}
+      - {x: 1.8939357, y: -1.2269396}
+      - {x: 0.01672548, y: -0.5651094}
+      - {x: 0.0365901, y: -4.014145}
+      - {x: 2.3360374, y: -4.024551}
+      - {x: 2.5328076, y: -2.9897673}
+  m_UseDelaunayMesh: 0
+--- !u!114 &1661735313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661735310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cd3bee0256b2374491636c76cc07b8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LightTime: 0.02
+  MaxLight: 2
+  LightTime_Count: 0
+  AttackLight: {fileID: 619394801}
+  AttackPlayerEvent: {fileID: 11400000, guid: b258a16067ca802439f1f6411795685b, type: 2}
+  DefendHitEvent: {fileID: 11400000, guid: 514abda201e6cf94e9bbe6bbc7d7bb31, type: 2}
+  BossAttackCount: 300
 --- !u!1 &1673749933
 GameObject:
   m_ObjectHideFlags: 0
@@ -24161,6 +24665,7 @@ MonoBehaviour:
   ReturnPlayerPoEvent: {fileID: 11400000, guid: 11f6c06be7650ad468aa1bef51353c30, type: 2}
   AttackBossEvent: {fileID: 11400000, guid: 0f8ce584c5ad5944cb2354bcba8c485f, type: 2}
   HitPlayerEvent: {fileID: 11400000, guid: c91e8fc29f3d8f444bd45af3f810e461, type: 2}
+  BlockBossEvent: {fileID: 11400000, guid: 32349da592c1d934b89a42ea9398c6bc, type: 2}
   IcePool: {fileID: 8431439724696219754, guid: 20df2d4a32aa50641affc5a70d0777eb, type: 3}
 --- !u!95 &1700075133
 Animator:
@@ -24280,7 +24785,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -24464,7 +24969,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1000
+  m_text: 2000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -24838,6 +25343,11 @@ Transform:
   m_Children:
   - {fileID: 1422635786}
   - {fileID: 1920823520}
+  - {fileID: 1101508703}
+  - {fileID: 1412453230}
+  - {fileID: 672347253}
+  - {fileID: 575145869}
+  - {fileID: 1661735311}
   m_Father: {fileID: 1700075131}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2048559086

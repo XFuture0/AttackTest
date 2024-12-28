@@ -185,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1541000117993658876}
   Speed: 1000
-  IceAttackCount: 10
+  IceAttackCount: 50
   AttackPlayerEvent: {fileID: 11400000, guid: b258a16067ca802439f1f6411795685b, type: 2}
   GetIceFaceEvent: {fileID: 0}
 --- !u!50 &1541000117993658876

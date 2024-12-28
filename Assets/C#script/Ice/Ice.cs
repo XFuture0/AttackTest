@@ -64,7 +64,8 @@ public class Ice : MonoBehaviour
             if (other.tag == "Player")
             {
                 isOpenHurt = false;
-                AttackPlayerEvent.RaiseFloatEvent(IceAttackCount);
+                var AttackCount = (int)UnityEngine.Random.Range(IceAttackCount,IceAttackCount * 1.3f);
+                AttackPlayerEvent.RaiseFloatEvent(AttackCount);
                 gameObject.SetActive(false);
             }
         }

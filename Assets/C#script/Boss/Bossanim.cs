@@ -80,6 +80,12 @@ public class Bossanim : MonoBehaviour
         IsSurf = !IsSurf;
         anim.SetBool("Surf", IsSurf);
     }
+    public void Restart()
+    {
+        anim.SetBool("Walk", false);
+        anim.SetBool("Surf", false);
+        anim.Play("New State",1);
+    }
     public void OnHeal()
     {
         anim.SetTrigger("Heal");
